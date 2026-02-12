@@ -135,7 +135,6 @@ class FilesApi(BaseApi):
                 attribute returned by the previous request's `response_metadata`.
                 This parameter is optional, but pagination is mandatory: the default
                 value simply fetches the first "page" of the collection of comments.
-                See [pagination](/docs/pagination) for more details.
 
         Returns:
             ApiResponse: An object with the response value as well as other useful

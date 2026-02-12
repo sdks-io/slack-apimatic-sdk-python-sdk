@@ -14,7 +14,7 @@ Schema for error response from rtm.connect method
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `callstack` | `str` | Optional | Note: PHP callstack is only visible in dev/qa |
-| `error` | [`Error74`](../../doc/models/error-74.md) | Required | - |
+| `error` | [`RtmConnectErrorEnum`](../../doc/models/rtm-connect-error-enum.md) | Required | - |
 | `ok` | `str` | Required, Constant | **Value**: `"False"` |
 | `additional_properties` | `Dict[str, Any]` | Optional | - |
 

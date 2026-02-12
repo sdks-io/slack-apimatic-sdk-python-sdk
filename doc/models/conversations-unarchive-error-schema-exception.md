@@ -14,7 +14,7 @@ Schema for error response from conversations.unarchive method
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `callstack` | `str` | Optional | Note: PHP callstack is only visible in dev/qa |
-| `error` | [`Error48`](../../doc/models/error-48.md) | Required | - |
+| `error` | [`ConversationsUnarchiveErrorEnum`](../../doc/models/conversations-unarchive-error-enum.md) | Required | - |
 | `needed` | `str` | Optional | - |
 | `ok` | `str` | Required, Constant | **Value**: `"False"` |
 | `provided` | `str` | Optional | - |

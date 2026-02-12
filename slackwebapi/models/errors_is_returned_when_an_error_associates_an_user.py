@@ -12,7 +12,8 @@ class ErrorsIsReturnedWhenAnErrorAssociatesAnUser(object):
     'errors is returned when an error associates an user' model.
 
     Attributes:
-        error (Error35): The model property of type Error35.
+        error (ConversationsInviteErrorEnum): The model property of type
+            ConversationsInviteErrorEnum.
         ok (str): The model property of type str.
         user (str): The model property of type str.
         additional_properties (Dict[str, Any]): The additional properties for the

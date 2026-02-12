@@ -14,7 +14,7 @@ Schema for error response from dnd.endSnooze method
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `callstack` | `str` | Optional | Note: PHP callstack is only visible in dev/qa |
-| `error` | [`Error51`](../../doc/models/error-51.md) | Required | - |
+| `error` | [`DndEndSnoozeErrorEnum`](../../doc/models/dnd-end-snooze-error-enum.md) | Required | - |
 | `ok` | `str` | Required, Constant | **Value**: `"False"` |
 | `additional_properties` | `Dict[str, Any]` | Optional | - |
 

@@ -14,7 +14,7 @@ Schema for error response from conversations.replies method
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `callstack` | `str` | Optional | Note: PHP callstack is only visible in dev/qa |
-| `error` | [`Error45`](../../doc/models/error-45.md) | Required | - |
+| `error` | [`ConversationsRepliesErrorEnum`](../../doc/models/conversations-replies-error-enum.md) | Required | - |
 | `needed` | `str` | Optional | - |
 | `ok` | `str` | Required, Constant | **Value**: `"False"` |
 | `provided` | `str` | Optional | - |

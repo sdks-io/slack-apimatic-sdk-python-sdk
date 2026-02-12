@@ -65,7 +65,7 @@ __all__ = [
     "files_shared_public_url_error_schema_exception",
     "files_upload_error_schema_exception",
     "migration_exchange_error_schema_exception",
-    "o_auth_provider_exception",
+    "oauth_provider_exception",
     "pins_add_error_schema_exception",
     "pins_list_error_schema_exception",
     "pins_remove_error_schema_exception",

@@ -14,7 +14,7 @@ Schema for error response from reactions.get method
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `callstack` | `str` | Optional | Note: PHP callstack is only visible in dev/qa |
-| `error` | [`Error66`](../../doc/models/error-66.md) | Required | - |
+| `error` | [`ReactionsGetErrorEnum`](../../doc/models/reactions-get-error-enum.md) | Required | - |
 | `ok` | `str` | Required, Constant | **Value**: `"False"` |
 | `additional_properties` | `Dict[str, Any]` | Optional | - |
 

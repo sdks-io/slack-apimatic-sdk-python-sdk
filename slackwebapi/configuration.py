@@ -233,7 +233,7 @@ class Configuration(HttpClientConfiguration):
         environment = Environment.from_value(
             os.getenv("ENVIRONMENT"), Environment.PRODUCTION)
 
-        from slackwebapi.http.auth.o_auth_2 import AuthorizationCodeAuthCredentials
+        from slackwebapi.http.auth.oauth_2 import AuthorizationCodeAuthCredentials
 
         # Preparing default configuration
         default_config = cls(

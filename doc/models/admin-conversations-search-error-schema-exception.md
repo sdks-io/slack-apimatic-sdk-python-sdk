@@ -13,7 +13,7 @@ Schema for error response from admin.conversations.search
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `error` | [`Error9`](../../doc/models/error-9.md) | Required | - |
+| `error` | [`AdminConversationsSearchErrorEnum`](../../doc/models/admin-conversations-search-error-enum.md) | Required | - |
 | `ok` | `str` | Required, Constant | **Value**: `"False"` |
 | `additional_properties` | `Dict[str, Any]` | Optional | - |
 

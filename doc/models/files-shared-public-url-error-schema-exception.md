@@ -14,7 +14,7 @@ Schema for error response from files.sharedPublicURL method
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `callstack` | `str` | Optional | Note: PHP callstack is only visible in dev/qa |
-| `error` | [`Error59`](../../doc/models/error-59.md) | Required | - |
+| `error` | [`FilesSharedPublicUrlErrorEnum`](../../doc/models/files-shared-public-url-error-enum.md) | Required | - |
 | `ok` | `str` | Required, Constant | **Value**: `"False"` |
 | `additional_properties` | `Dict[str, Any]` | Optional | - |
 

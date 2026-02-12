@@ -107,10 +107,10 @@ from slackwebapi.apis.files_remote_api import (
     FilesRemoteApi,
 )
 from slackwebapi.apis.migration_api import MigrationApi
-from slackwebapi.apis.o_auth_authorization_api import (
-    OAuthAuthorizationApi,
-)
 from slackwebapi.apis.oauth_api import OauthApi
+from slackwebapi.apis.oauth_authorization_api import (
+    OauthAuthorizationApi,
+)
 from slackwebapi.apis.oauth_v_2_api import OauthV2Api
 from slackwebapi.apis.pins_api import PinsApi
 from slackwebapi.apis.reactions_api import ReactionsApi
@@ -138,7 +138,7 @@ from slackwebapi.configuration import (
     Configuration,
     Environment,
 )
-from slackwebapi.http.auth.o_auth_2 import OAuth2
+from slackwebapi.http.auth.oauth_2 import Oauth2
 
 
 class SlackwebapiClient(object):
@@ -420,9 +420,9 @@ class SlackwebapiClient(object):
         return WorkflowsApi(self.global_configuration)
 
     @LazyProperty
-    def o_auth_authorization(self):
-        """Provide access to the OAuthAuthorizationApi endpoints."""
-        return OAuthAuthorizationApi(self.global_configuration)
+    def oauth_authorization(self):
+        """Provide access to the OauthAuthorizationApi endpoints."""
+        return OauthAuthorizationApi(self.global_configuration)
 
     @property
     def slack_auth(self):
@@ -454,7 +454,7 @@ class SlackwebapiClient(object):
                 BaseApi.user_agent_parameters())
 
         self.auth_managers = {
-            "slackAuth": OAuth2(self.config.authorization_code_auth_credentials,
+            "slackAuth": Oauth2(self.config.authorization_code_auth_credentials,
                                 self.global_configuration),
         }
         self.global_configuration =\

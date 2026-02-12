@@ -32,10 +32,10 @@ Values provided through arguments take precedence over those defined in environm
 ```python
 ENVIRONMENT=production
 
-O_AUTH_CLIENT_ID=ExampleOAuthClientId
-O_AUTH_CLIENT_SECRET=ExampleOAuthClientSecret
-O_AUTH_REDIRECT_URI=ExampleOAuthRedirectUri
-O_AUTH_SCOPES=READ,WRITE
+OAUTH_CLIENT_ID=ExampleOauthClientId
+OAUTH_CLIENT_SECRET=ExampleOauthClientSecret
+OAUTH_REDIRECT_URI=ExampleOauthRedirectUri
+OAUTH_SCOPES=READ,WRITE
 
 TIMEOUT=60
 MAX_RETRIES=3

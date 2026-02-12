@@ -14,7 +14,7 @@ Schema for error response from conversations.close method
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `callstack` | `str` | Optional | Note: PHP callstack is only visible in dev/qa |
-| `error` | [`Error31`](../../doc/models/error-31.md) | Required | - |
+| `error` | [`ConversationsCloseErrorEnum`](../../doc/models/conversations-close-error-enum.md) | Required | - |
 | `needed` | `str` | Optional | - |
 | `ok` | `str` | Required, Constant | **Value**: `"False"` |
 | `provided` | `str` | Optional | - |

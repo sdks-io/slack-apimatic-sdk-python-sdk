@@ -14,7 +14,7 @@ Schema for error response conversations.kick method
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `callstack` | `str` | Optional | Note: PHP callstack is only visible in dev/qa |
-| `error` | [`Error38`](../../doc/models/error-38.md) | Required | - |
+| `error` | [`ConversationsKickErrorEnum`](../../doc/models/conversations-kick-error-enum.md) | Required | - |
 | `needed` | `str` | Optional | - |
 | `ok` | `str` | Required, Constant | **Value**: `"False"` |
 | `provided` | `str` | Optional | - |

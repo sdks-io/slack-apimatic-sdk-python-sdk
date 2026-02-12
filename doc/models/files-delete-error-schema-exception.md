@@ -14,7 +14,7 @@ Schema for error response files.delete method
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `callstack` | `str` | Optional | Note: PHP callstack is only visible in dev/qa |
-| `error` | [`Error55`](../../doc/models/error-55.md) | Required | - |
+| `error` | [`FilesDeleteErrorEnum`](../../doc/models/files-delete-error-enum.md) | Required | - |
 | `ok` | `str` | Required, Constant | **Value**: `"False"` |
 | `additional_properties` | `Dict[str, Any]` | Optional | - |
 

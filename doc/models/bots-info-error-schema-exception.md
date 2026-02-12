@@ -14,7 +14,7 @@ Schema for error response from bots.info method
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `callstack` | `str` | Optional | Note: PHP callstack is only visible in dev/qa |
-| `error` | [`Error19`](../../doc/models/error-19.md) | Required | - |
+| `error` | [`BotsInfoErrorEnum`](../../doc/models/bots-info-error-enum.md) | Required | - |
 | `ok` | `str` | Required, Constant | **Value**: `"False"` |
 | `additional_properties` | `Dict[str, Any]` | Optional | - |
 

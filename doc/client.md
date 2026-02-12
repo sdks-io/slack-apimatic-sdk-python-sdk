@@ -26,21 +26,21 @@ The API client can be initialized as follows:
 import logging
 
 from slackwebapi.configuration import Environment
-from slackwebapi.http.auth.o_auth_2 import AuthorizationCodeAuthCredentials
+from slackwebapi.http.auth.oauth_2 import AuthorizationCodeAuthCredentials
 from slackwebapi.logging.configuration.api_logging_configuration import LoggingConfiguration
 from slackwebapi.logging.configuration.api_logging_configuration import RequestLoggingConfiguration
 from slackwebapi.logging.configuration.api_logging_configuration import ResponseLoggingConfiguration
-from slackwebapi.models.o_auth_scope import OAuthScope
+from slackwebapi.models.oauth_scope import OauthScope
 from slackwebapi.slackwebapi_client import SlackwebapiClient
 
 client = SlackwebapiClient(
     authorization_code_auth_credentials=AuthorizationCodeAuthCredentials(
-        o_auth_client_id='OAuthClientId',
-        o_auth_client_secret='OAuthClientSecret',
-        o_auth_redirect_uri='OAuthRedirectUri',
-        o_auth_scopes=[
-            OAuthScope.ADMIN,
-            OAuthScope.ADMIN_APPSREAD
+        oauth_client_id='OAuthClientId',
+        oauth_client_secret='OAuthClientSecret',
+        oauth_redirect_uri='OAuthRedirectUri',
+        oauth_scopes=[
+            OauthScope.ADMIN,
+            OauthScope.ADMIN_APPSREAD
         ]
     ),
     environment=Environment.PRODUCTION,
@@ -130,5 +130,5 @@ The gateway for the SDK. This class acts as a factory for the Apis and also hold
 | users_profile | Gets UsersProfileApi |
 | views | Gets ViewsApi |
 | workflows | Gets WorkflowsApi |
-| o_auth_authorization | Gets OAuthAuthorizationApi |
+| oauth_authorization | Gets OauthAuthorizationApi |
 

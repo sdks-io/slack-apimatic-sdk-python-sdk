@@ -14,7 +14,7 @@ Schema for error response from chat.delete method
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `callstack` | `str` | Optional | Note: PHP callstack is only visible in dev/qa |
-| `error` | [`Error20`](../../doc/models/error-20.md) | Required | - |
+| `error` | [`ChatDeleteErrorEnum`](../../doc/models/chat-delete-error-enum.md) | Required | - |
 | `ok` | `str` | Required, Constant | **Value**: `"False"` |
 | `additional_properties` | `Dict[str, Any]` | Optional | - |
 

@@ -9,11 +9,11 @@ Documentation for accessing and setting credentials for slackAuth.
 
 | Name | Type | Description | Getter |
 |  --- | --- | --- | --- |
-| OAuthClientId | `str` | OAuth 2 Client ID | `o_auth_client_id` |
-| OAuthClientSecret | `str` | OAuth 2 Client Secret | `o_auth_client_secret` |
-| OAuthRedirectUri | `str` | OAuth 2 Redirection endpoint or Callback Uri | `o_auth_redirect_uri` |
-| OAuthToken | `OAuthToken` | Object for storing information about the OAuth token | `o_auth_token` |
-| OAuthScopes | `List[OAuthScope]` | List of scopes that apply to the OAuth token | `o_auth_scopes` |
+| OAuthClientId | `str` | OAuth 2 Client ID | `oauth_client_id` |
+| OAuthClientSecret | `str` | OAuth 2 Client Secret | `oauth_client_secret` |
+| OAuthRedirectUri | `str` | OAuth 2 Redirection endpoint or Callback Uri | `oauth_redirect_uri` |
+| OAuthToken | `OauthToken` | Object for storing information about the OAuth token | `oauth_token` |
+| OAuthScopes | `List[OauthScope]` | List of scopes that apply to the OAuth token | `oauth_scopes` |
 
 
 
@@ -26,18 +26,18 @@ Documentation for accessing and setting credentials for slackAuth.
 You must initialize the client with *OAuth 2.0 Authorization Code Grant* credentials as shown in the following code snippet.
 
 ```python
-from slackwebapi.http.auth.o_auth_2 import AuthorizationCodeAuthCredentials
-from slackwebapi.models.o_auth_scope import OAuthScope
+from slackwebapi.http.auth.oauth_2 import AuthorizationCodeAuthCredentials
+from slackwebapi.models.oauth_scope import OauthScope
 from slackwebapi.slackwebapi_client import SlackwebapiClient
 
 client = SlackwebapiClient(
     authorization_code_auth_credentials=AuthorizationCodeAuthCredentials(
-        o_auth_client_id='OAuthClientId',
-        o_auth_client_secret='OAuthClientSecret',
-        o_auth_redirect_uri='OAuthRedirectUri',
-        o_auth_scopes=[
-            OAuthScope.ADMIN,
-            OAuthScope.ADMIN_APPSREAD
+        oauth_client_id='OAuthClientId',
+        oauth_client_secret='OAuthClientSecret',
+        oauth_redirect_uri='OAuthRedirectUri',
+        oauth_scopes=[
+            OauthScope.ADMIN,
+            OauthScope.ADMIN_APPSREAD
         ]
     )
 )
@@ -78,10 +78,10 @@ After the server receives the code, it can exchange this for an *access token*. 
 ```python
 try:
     token = client.slack_auth.fetch_token('code')
-    authorization_code_auth_credentials = client.config.authorization_code_auth_credentials.clone_with(o_auth_token=token)
+    authorization_code_auth_credentials = client.config.authorization_code_auth_credentials.clone_with(oauth_token=token)
     config = client.config.clone_with(authorization_code_auth_credentials=authorization_code_auth_credentials)
     client = SlackwebapiClient(config=config)
-except OAuthProviderException as ex:
+except OauthProviderException as ex:
     # handle exception
     pass
 except ApiException as ex:
@@ -91,7 +91,7 @@ except ApiException as ex:
 
 ### Scopes
 
-Scopes enable your application to only request access to the resources it needs while enabling users to control the amount of access they grant to your application. Available scopes are defined in the [`OAuthScope`](../../doc/models/o-auth-scope.md) enumeration.
+Scopes enable your application to only request access to the resources it needs while enabling users to control the amount of access they grant to your application. Available scopes are defined in the [`OauthScope`](../../doc/models/oauth-scope.md) enumeration.
 
 | Scope Name | Description |
 |  --- | --- |
@@ -171,10 +171,10 @@ An access token may expire after sometime. To extend its lifetime, you must refr
 if client.slack_auth.is_token_expired():
     try:
         token = client.slack_auth.refresh_token()
-        authorization_code_auth_credentials = client.config.authorization_code_auth_credentials.clone_with(o_auth_token=token)
+        authorization_code_auth_credentials = client.config.authorization_code_auth_credentials.clone_with(oauth_token=token)
         config = client.config.clone_with(authorization_code_auth_credentials=authorization_code_auth_credentials)
         client = SlackwebapiClient(config=config)
-    except OAuthProviderException as ex:
+    except OauthProviderException as ex:
        # handle exception
        pass
 ```
@@ -187,7 +187,7 @@ It is recommended that you store the access token for reuse.
 
 ```python
 # store token
-save_token_to_database(client.config.authorization_code_auth_credentials.o_auth_token)
+save_token_to_database(client.config.authorization_code_auth_credentials.oauth_token)
 ```
 
 ### Creating a client from a stored token
@@ -197,7 +197,7 @@ To authorize a client using a stored access token, just set the access token in 
 ```python
 client = SlackwebapiClient(
     authorization_code_auth_credentials=AuthorizationCodeAuthCredentials(
-        o_auth_token=load_token_from_database()
+        oauth_token=load_token_from_database()
     )
 )
 ```
@@ -208,18 +208,18 @@ client = SlackwebapiClient(
 
 ```python
 from slackwebapi.slackwebapi_client import SlackwebapiClient
-from slackwebapi.http.auth.o_auth_2 import AuthorizationCodeAuthCredentials
-from slackwebapi.models.o_auth_scope import OAuthScope
-from slackwebapi.exceptions.o_auth_provider_exception import OAuthProviderException
+from slackwebapi.http.auth.oauth_2 import AuthorizationCodeAuthCredentials
+from slackwebapi.models.oauth_scope import OauthScope
+from slackwebapi.exceptions.oauth_provider_exception import OauthProviderException
 
 client = SlackwebapiClient(
     authorization_code_auth_credentials=AuthorizationCodeAuthCredentials(
-        o_auth_client_id='OAuthClientId',
-        o_auth_client_secret='OAuthClientSecret',
-        o_auth_redirect_uri='OAuthRedirectUri',
-        o_auth_scopes=[
-            OAuthScope.ADMIN,
-            OAuthScope.ADMIN_APPSREAD
+        oauth_client_id='OAuthClientId',
+        oauth_client_secret='OAuthClientSecret',
+        oauth_redirect_uri='OAuthRedirectUri',
+        oauth_scopes=[
+            OauthScope.ADMIN,
+            OauthScope.ADMIN_APPSREAD
         ]
     )
 )
@@ -237,7 +237,7 @@ def load_token_from_database():
 previous_token = load_token_from_database()
 if previous_token:
     # restore previous access token
-    authorization_code_auth_credentials = client.config.authorization_code_auth_credentials.clone_with(o_auth_token=previous_token)
+    authorization_code_auth_credentials = client.config.authorization_code_auth_credentials.clone_with(oauth_token=previous_token)
     config = client.config.clone_with(authorization_code_auth_credentials=authorization_code_auth_credentials)
     client = SlackwebapiClient(config=config)
 else:

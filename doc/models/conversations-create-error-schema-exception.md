@@ -15,7 +15,7 @@ Schema for error response from conversations.create method
 |  --- | --- | --- | --- |
 | `callstack` | `str` | Optional | Note: PHP callstack is only visible in dev/qa |
 | `detail` | `str` | Optional | - |
-| `error` | [`Error32`](../../doc/models/error-32.md) | Required | - |
+| `error` | [`ConversationsCreateErrorEnum`](../../doc/models/conversations-create-error-enum.md) | Required | - |
 | `needed` | `str` | Optional | - |
 | `ok` | `str` | Required, Constant | **Value**: `"False"` |
 | `provided` | `str` | Optional | - |

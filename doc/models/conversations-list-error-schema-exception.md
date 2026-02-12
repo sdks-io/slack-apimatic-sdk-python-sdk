@@ -14,7 +14,7 @@ Schema for error response from conversations.list method
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `callstack` | `str` | Optional | Note: PHP callstack is only visible in dev/qa |
-| `error` | [`Error40`](../../doc/models/error-40.md) | Required | - |
+| `error` | [`ConversationsListErrorEnum`](../../doc/models/conversations-list-error-enum.md) | Required | - |
 | `needed` | `str` | Optional | - |
 | `ok` | `str` | Required, Constant | **Value**: `"False"` |
 | `provided` | `str` | Optional | - |

@@ -111,8 +111,7 @@ class UsersApi(BaseApi):
             cursor (str, optional): Paginate through collections of data by setting
                 the `cursor` parameter to a `next_cursor` attribute returned by a
                 previous request's `response_metadata`. Default value fetches the
-                first "page" of the collection. See [pagination](/docs/pagination)
-                for more detail.
+                first "page" of the collection.
 
         Returns:
             ApiResponse: An object with the response value as well as other useful
@@ -380,8 +379,7 @@ class UsersApi(BaseApi):
             cursor (str, optional): Paginate through collections of data by setting
                 the `cursor` parameter to a `next_cursor` attribute returned by a
                 previous request's `response_metadata`. Default value fetches the
-                first "page" of the collection. See [pagination](/docs/pagination)
-                for more detail.
+                first "page" of the collection.
             include_locale (bool, optional): Set this to `true` to receive the locale
                 for users. Defaults to `false`
 

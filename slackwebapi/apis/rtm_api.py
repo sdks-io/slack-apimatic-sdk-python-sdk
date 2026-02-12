@@ -44,10 +44,8 @@ class RtmApi(BaseApi):
             token (str): Authentication token. Requires scope: `rtm:stream`
             batch_presence_aware (bool, optional): Batch presence deliveries via
                 subscription. Enabling changes the shape of `presence_change` events.
-                See [batch presence](/docs/presence-and-status#batching).
             presence_sub (bool, optional): Only deliver presence events when
-                requested by subscription. See [presence
-                subscriptions](/docs/presence-and-status#subscriptions).
+                requested by subscription
 
         Returns:
             ApiResponse: An object with the response value as well as other useful

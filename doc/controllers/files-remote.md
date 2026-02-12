@@ -149,7 +149,7 @@ def files_remote_list(self,
 | `ts_from` | `float` | Query, Optional | Filter files created after this timestamp (inclusive). |
 | `ts_to` | `float` | Query, Optional | Filter files created before this timestamp (inclusive). |
 | `limit` | `int` | Query, Optional | The maximum number of items to return. |
-| `cursor` | `str` | Query, Optional | Paginate through collections of data by setting the `cursor` parameter to a `next_cursor` attribute returned by a previous request's `response_metadata`. Default value fetches the first "page" of the collection. See [pagination](/docs/pagination) for more detail. |
+| `cursor` | `str` | Query, Optional | Paginate through collections of data by setting the `cursor` parameter to a `next_cursor` attribute returned by a previous request's `response_metadata`. Default value fetches the first "page" of the collection. |
 
 ## Requires scope
 

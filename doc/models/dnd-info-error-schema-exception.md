@@ -14,7 +14,7 @@ Schema for error response from dnd.info method
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `callstack` | `str` | Optional | Note: PHP callstack is only visible in dev/qa |
-| `error` | [`Error52`](../../doc/models/error-52.md) | Required | - |
+| `error` | [`DndInfoErrorEnum`](../../doc/models/dnd-info-error-enum.md) | Required | - |
 | `ok` | `str` | Required, Constant | **Value**: `"False"` |
 | `additional_properties` | `Dict[str, Any]` | Optional | - |
 
